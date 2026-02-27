@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -10,13 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 //@ResponseBody
 @RestController
 public class ProductController {
-    private ProductService productService = new ProductService();
+//    private ProductService productService = new ProductService();
+    @Autowired // 의존성 주입
+    private ProductService productService;
 
     ProductController(){
         System.out.println("진짜 스프링이 알아서 객체 생성을?");
-//        System.out.println(System.getProperty("file.encoding"));
-//        System.out.println(java.nio.charset.Charset.defaultCharset());
-
     }
 
     @RequestMapping(value = " ", method = RequestMethod.GET)
