@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 // 방법 2. @Component 해줌으로써 객체생성을 하지 않아도 됨.
@@ -12,8 +13,10 @@ Spring이 애플리케이션 시작할 때
  */
 @Component
 public class ProductService {
+    @Autowired
+    private ProductRepository productRepository;
 
     public String getProduct() {
-        return "NoteBook";
+        return productRepository.getProduct();
     }
 }
