@@ -13,10 +13,16 @@ Spring이 애플리케이션 시작할 때
  */
 @Component
 public class ProductService {
-    @Autowired
     private ProductRepository productRepository;
+
+    @Autowired
+    ProductService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+
+    }
 
     public String getProduct() {
         return productRepository.getProduct();
     }
+
 }
