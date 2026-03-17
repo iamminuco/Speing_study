@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.product;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -25,4 +25,7 @@ public class ProductService {
         return productRepository.getProduct();
     }
 
+    public void saveProduct() {
+        productRepository.saveProduct();
+    }
 }
