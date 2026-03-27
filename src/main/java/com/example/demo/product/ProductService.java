@@ -21,8 +21,8 @@ public class ProductService {
 
     }
 
-    public String getProduct() {
-        return productRepository.getProduct();
+    public String getProduct(int id) {
+        return productRepository.getProduct(id);
     }
 
     public void saveProduct(String productName) {
